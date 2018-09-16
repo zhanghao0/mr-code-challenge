@@ -1,0 +1,458 @@
+{
+	"info": {
+		"name": "mr-code-challenge",
+		"_postman_id": "67098d19-80b0-264c-90e4-4c972b81429c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "provision-number",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"number\": \"91234570\",\n\t\"addons\": [\n\t\t\"75ed96c9-41e3-4436-8596-9479f556a242\",\n\t\t\"c14a8084-92e6-4b61-a1a4-217f51cd3002\"\n\t]\n}"
+				},
+				"url": "http://localhost:8080/api/v1/numbers",
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "ed20b853-bc8a-4ea4-ba45-b661eccf4101",
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"number\": \"91234568\",\n\t\"addons\": [\n\t\t\"75ed96c9-41e3-4436-8596-9479f556a242\"\n\t]\n}"
+						},
+						"url": "http://localhost:8080/api/v1/numbers"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Sep 2018 12:57:28 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 1240,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "get-numbers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/numbers?status=Available",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"numbers"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Available",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "bc796484-310a-40c7-9157-b02800119e72",
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/numbers?status=Available",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"numbers"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "Available",
+									"equals": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Sep 2018 12:23:56 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookie": [],
+					"responseTime": 774,
+					"body": "{\"content\":[{\"id\":\"39acffd9-15c1-4524-9648-72a30d16ce96\",\"number\":\"98712335\",\"status\":\"Available\",\"lastUpdatedBy\":null,\"lastUpdatedAt\":\"2018-09-16T18:33:42.665776+08:00\",\"version\":1,\"addons\":[]},{\"id\":\"75bb3fa5-ec9f-4535-b3ab-457fd274e256\",\"number\":\"98746735\",\"status\":\"Available\",\"lastUpdatedBy\":null,\"lastUpdatedAt\":\"2018-09-16T18:33:42.665776+08:00\",\"version\":1,\"addons\":[]},{\"id\":\"8de8e206-82f1-4ab6-b12c-f7a25436a9b3\",\"number\":\"98764445\",\"status\":\"Available\",\"lastUpdatedBy\":null,\"lastUpdatedAt\":\"2018-09-16T18:33:42.665776+08:00\",\"version\":1,\"addons\":[]},{\"id\":\"9cac82b4-b466-4dbc-9397-0fcefd651919\",\"number\":\"98765435\",\"status\":\"Available\",\"lastUpdatedBy\":null,\"lastUpdatedAt\":\"2018-09-16T18:33:42.665776+08:00\",\"version\":1,\"addons\":[]}],\"pageable\":\"INSTANCE\",\"totalPages\":1,\"totalElements\":4,\"last\":true,\"number\":0,\"size\":0,\"sort\":{\"sorted\":false,\"unsorted\":true},\"numberOfElements\":4,\"first\":true}"
+				}
+			]
+		},
+		{
+			"name": "get-numbers-paged",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/numbers?status=Available&page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"numbers"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Available",
+							"equals": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "subscribe-number",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://localhost:8080/api/v1/numbers/subscribed/39acffd9-15c1-4524-9648-72a30d16ce96",
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "b32f26c5-f96d-431d-9f0c-96726ae9b2d4",
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:8080/api/v1/numbers/subscribed/39acffd9-15c1-4524-9648-72a30d16ce96"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Sep 2018 13:33:00 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 203,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "terminate-number",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://localhost:8080/api/v1/numbers/terminated/18ea27a0-e6cc-46b3-958a-31bfb43a2a27",
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "0c11bf55-a47b-45d1-9f9d-e3b53cba1242",
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:8080/api/v1/numbers/terminated/18ea27a0-e6cc-46b3-958a-31bfb43a2a27"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Sep 2018 13:17:11 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 80,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "quarantine-number",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lastUpdatedBy\": \"operator1\"\n}"
+				},
+				"url": "http://localhost:8080/api/v1/numbers/quarantined/39acffd9-15c1-4524-9648-72a30d16ce96",
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "0929b754-1a46-41eb-a688-bceb57d354d8",
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"lastUpdatedBy\": \"operator1\"\n}"
+						},
+						"url": "http://localhost:8080/api/v1/numbers/quarantined/39acffd9-15c1-4524-9648-72a30d16ce96"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Sep 2018 13:37:54 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 119,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "release-number",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lastUpdatedBy\": \"operator1\"\n}"
+				},
+				"url": "http://localhost:8080/api/v1/numbers/released/39acffd9-15c1-4524-9648-72a30d16ce96",
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "c461239a-3ff2-4640-b09a-14387b91104a",
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"lastUpdatedBy\": \"operator1\"\n}"
+						},
+						"url": "http://localhost:8080/api/v1/numbers/released/39acffd9-15c1-4524-9648-72a30d16ce96"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Sep 2018 13:40:46 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"responseTime": 94,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "get-events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/events?numberId=18ea27a0-e6cc-46b3-958a-31bfb43a2a27",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"events"
+					],
+					"query": [
+						{
+							"key": "numberId",
+							"value": "18ea27a0-e6cc-46b3-958a-31bfb43a2a27",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
