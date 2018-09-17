@@ -1,6 +1,0 @@
-
-CREATE TABLE IF NOT EXISTS addons(
-	id UUID PRIMARY KEY,
-	type TEXT NOT NULL,
-	cost INT4 NOT NULL
-);

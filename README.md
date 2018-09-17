@@ -4,6 +4,9 @@ This is a simple demo application for number block management, so a lot of compl
 2. event parameter only store simple string
 3. unit test cases
 
+#Architecture
+Not sure how many micro-services should be created. But basically I should depend on traffic volume. Remove foreign key.
+
 # Environment
 * IDE: Spring Tool Suite 3.9.2 RELEASE
 * OS: Windows 8
@@ -17,6 +20,7 @@ This is a simple demo application for number block management, so a lot of compl
 * Launch pgAdmin 4 and create a database "mr"
 
 # Backend
+## Run
 * Go to [project root]/resources
 * Execute: java -jar mr-code-challenge-1.0.0.jar
 * Database tables will be created automatically
