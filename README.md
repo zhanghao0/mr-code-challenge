@@ -17,7 +17,6 @@ This is a simple demo application for number block management, so a lot of compl
 * Launch pgAdmin 4 and create a database "mr"
 
 # Backend
-## Run
 * Go to [project root]/resources
 * Execute: java -jar mr-code-challenge-1.0.0.jar
 * Database tables will be created automatically
