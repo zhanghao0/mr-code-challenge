@@ -135,9 +135,8 @@ public class NumberSerivceImpl implements NumberService {
     	}
     	
     	Number number = numberOpt.get();
-    	
-    	//assume only subscribed numbers can be quarantined
-    	if (number.getStatus() != NumberStatus.Subscribed) {
+
+    	if (number.getStatus() == NumberStatus.Quarantined) {
     		throw new InvalidNumberStatusException(numberId.toString());
     	}
     	
