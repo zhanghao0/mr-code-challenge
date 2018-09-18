@@ -40,7 +40,7 @@ In this case, reference keys and parent-child associations should be removed.
 1. Indices are used for speeding up some queries (e.g. get events order by number id)
 1. Other possible ways (not implemented): cache (e.g. get addon), read replica of database, message queue (e.g. traffic spike)
 
-## Security (not implemented)
+## Security
 1. The micro-service can be split into two: one for customer and the other for administrator (different security zones)
 
 ## Privacy
