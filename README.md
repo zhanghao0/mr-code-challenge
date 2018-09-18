@@ -17,9 +17,9 @@ There is one micro-service in the system which has three layers of objects:
 There are three controllers:
 1. Number Controller: provides APIs for number provision, quarantine, release, subscribe and terminate.
 1. Addon Controller: provides APIs for addons (pre-populated) retrieval
-1. Event Controller: provides APIs for events retrieval
+1. Event Controller: provides APIs for events (history) retrieval
 
-Details can be find this diagram.
+## APIs
 ![APIs](./resources/API.png)
 
 You can also see APIs after application started and access the Swagger UI. (see the Testing section)
@@ -27,25 +27,26 @@ You can also see APIs after application started and access the Swagger UI. (see 
 ## Database
 ![ERD](./resources/ERD.png)
 
-## Scalability
-1. Horizontal scalability: the micro-service can scale horizontally, probably based on number range. UUID is used as primary keys in the database, so there is conflict among micro-services.
-1. Vertical scalability: number management, service management and event management may be split into separate micro-services if traffic volume or data storage increases.   
+## Scalability (Horizontal)
+1. The micro-service can scale horizontally, probably based on number range (i.e. each micro-service instance is responsible for a number range). UUID is used as primary keys in the database, so there is no conflict among micro-services.
+1. Number management, service management and event management may be split into separate micro-services if traffic volume or data storage increases.   
 In this case, reference keys and parent-child associations should be removed.
 
 ## Performance
 1. Scalability ensures manageable traffic volume and data storage on each server
 1. Pagination is used for number/event retrieval
-1. Indices are used for speeding up some quires (e.g. get events order by number id)
+1. Indices are used for speeding up some queries (e.g. get events order by number id)
 
 ## Race condition handling
 1. Unique constraint is added to ensure there is no multiple provisioning of the same number
-1. Version is added for detecting conflict updates (quarantine, release, subscribe and terminate)
+1. Version is added for detecting conflict updates on numbers (quarantine, release, subscribe and terminate)
 
 # Environment
 * IDE: Spring Tool Suite 3.9.2 RELEASE
-* OS: Windows 8
+* OS: Windows 8 / RHEL 7
 * DATABASE: H2 (In-memory)
-* Language and Framework: Java 8 and Spring Boot 2
+* Language: Java 8
+* Framework: Spring Boot, Hibernate, etc.
 * Build: Gradle
 
 # Provisioned Data
@@ -61,7 +62,7 @@ There are two ways to run the application.
 * Execute: docker pull ivxivx/mr-code-challenge:1.0.0
 * Execute: docker run -p 8080:8080 ivxivx/mr-code-challenge:1.0.0
 
-## As Spring Boot Application
+## As Spring Boot application
 * Go to [project root]/resources
 * Execute: java -jar mr-code-challenge-1.0.0.jar
 
