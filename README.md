@@ -77,7 +77,7 @@ There are two ways to run the application.
 
 # Testing
 ## Using Swagger
-* Start backend and access http://localhost:8080/swagger-ui.html  
+* Start the application and access http://localhost:8080/swagger-ui.html  
 
 ## Using Postman  
 * Download Postman from https://dl.pstmn.io/download/version/5.5.3/windows64
