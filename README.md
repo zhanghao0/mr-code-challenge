@@ -52,7 +52,7 @@ In this case, reference keys and parent-child associations should be removed.
 
 # Environment
 * IDE: Spring Tool Suite 3.9.2 RELEASE
-* OS: Windows 8 / RHEL 7
+* OS: RHEL 7
 * DATABASE: H2 (In-memory)
 * Language: Java 8
 * Framework: Spring Boot, Hibernate, etc.
